@@ -1,1 +1,11 @@
+El Problema:
+Tienes un DataFrame con datos de una serie de tiempo y necesitas 
+suavizar la señal calculando su media móvil para identificar tendencias.
 
+Tu Misión:
+Escribe una función llamada calcular_media_movil(df, columna, ventana) que:
+- Calcule la media móvil de la columna especificada usando el tamaño 
+  de ventana dado.
+- Agregue el resultado como una nueva columna llamada media_movil.
+- Elimine las filas con NaN resultantes del cálculo.
+- Retorne el DataFrame modificado con el índice reiniciado.
