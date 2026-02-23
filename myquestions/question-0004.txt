@@ -1,1 +1,11 @@
+El Problema:
+Necesitas evaluar el rendimiento de un clasificador KNN sobre un conjunto 
+de datos y obtener métricas detalladas de su desempeño.
 
+Tu Misión:
+Escribe una función llamada clasificar_knn(X_train, y_train, X_test, y_test, k) que:
+- Entrene un modelo KNeighborsClassifier con k vecinos sobre los datos 
+  de entrenamiento.
+- Realice predicciones sobre X_test.
+- Retorne un diccionario con las claves accuracy, precision, recall 
+  y f1_score calculadas sobre el conjunto de prueba.
