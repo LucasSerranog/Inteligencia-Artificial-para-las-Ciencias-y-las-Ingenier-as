@@ -1,1 +1,4 @@
-# Inteligencia-Artificial-para-las-Ciencias-y-las-Ingenier-as
+# Inteligencia Artificial para las Ciencias e Ingenierías
+
+**Nombre:** Lucas Serrano
+**Correo:** lucas.serranog@udea.edu.co
