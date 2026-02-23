@@ -1,1 +1,10 @@
+El Problema:
+Tienes datos de alta dimensionalidad y necesitas reducirlos antes de 
+entrenar un modelo de regresión para mejorar su eficiencia.
 
+Tu Misión:
+Escribe una función llamada pipeline_pca_regresion(X_train, y_train, X_test, n_components) que:
+- Construya un Pipeline de sklearn con PCA (usando n_components componentes) 
+  seguido de un modelo LinearRegression.
+- Entrene el pipeline con los datos de entrenamiento.
+- Retorne las predicciones sobre X_test como un array de numpy.
