@@ -1,1 +1,13 @@
+El Problema:
+Tienes dos DataFrames separados, uno con información de productos y 
+otro con registros de ventas, y necesitas combinarlos para identificar 
+los productos más vendidos.
 
+Tu Misión:
+Escribe una función llamada combinar_ventas(df_productos, df_ventas, top_n) que:
+- Reciba un DataFrame de productos con columnas producto_id y nombre, 
+  y otro de ventas con columnas producto_id y cantidad_vendida.
+- Los una mediante un merge por producto_id.
+- Agrupe por nombre de producto sumando las cantidades vendidas.
+- Retorne un DataFrame con los top_n productos más vendidos, ordenados 
+  de mayor a menor, con el índice reiniciado.
