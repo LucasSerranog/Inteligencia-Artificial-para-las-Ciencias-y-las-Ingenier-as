@@ -37,10 +37,5 @@ def generar_caso_de_uso_clasificar_knn():
     }
     
     return input_data, output_data
-```
 
----
-
-### `myanswers/.gitkeep`
-```
-(vacío)
+generar_caso_de_uso_clasificar_knn()
