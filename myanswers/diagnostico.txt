@@ -1,6 +1,7 @@
-answer-0086: El generador de caso de uso del compañero retorna el DataFrame 
-crudo como expected output en lugar de la pivot table procesada. 
-La función implementada realiza el procesamiento correcto según el enunciado, 
-pero el validador compara contra el df sin procesar.
-
-
+answer-0202: 
+El generador de caso de uso del compañero Alberto retorna un diccionario 
+con claves "input" y "output", donde "output" es un DataFrame. 
+El validador del profesor falla al intentar comparar DataFrames con != 
+(línea 104 del validador). Este es un bug en el generador/validador, 
+no en la solución implementada. La función calcular_rotacion_inventario 
+implementa correctamente la lógica del enunciado.
