@@ -1,7 +1,13 @@
-answer-0202: 
-El generador de caso de uso del compañero Alberto retorna un diccionario 
-con claves "input" y "output", donde "output" es un DataFrame. 
-El validador del profesor falla al intentar comparar DataFrames con != 
-(línea 104 del validador). Este es un bug en el generador/validador, 
-no en la solución implementada. La función calcular_rotacion_inventario 
-implementa correctamente la lógica del enunciado.
+answer-0202:
+La función calcular_rotacion_inventario está correctamente implementada 
+según el enunciado del compañero Alberto Gero. La solución fue probada 
+localmente en un entorno independiente comparando el output de la función 
+con el output esperado del generador de caso de uso, obteniendo 
+"¿Son iguales? True" en ambas verificaciones (ver link adjunto). 
+Sin embargo, el validador del profesor falla en la línea 104 al intentar 
+evaluar "if expected != actual" donde "expected" es un DataFrame retornado 
+por el generador de caso de uso. Esta comparación causa un ValueError: 
+"The truth value of a DataFrame is ambiguous". El error está en el 
+validador/generador del compañero, no en la solución implementada.
+
+https://colab.research.google.com/drive/1fasMX2Bmd4tF_8R4P6ELXwdZ5aAPJpSY?usp=sharing
