@@ -1,1 +1,6 @@
-Sin diagnósticos adicionales.
+answer-0086: El generador de caso de uso del compañero retorna el DataFrame 
+crudo como expected output en lugar de la pivot table procesada. 
+La función implementada realiza el procesamiento correcto según el enunciado, 
+pero el validador compara contra el df sin procesar.
+
+
