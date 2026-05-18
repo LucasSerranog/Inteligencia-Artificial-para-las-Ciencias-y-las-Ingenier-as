@@ -1,7 +1,9 @@
 import pandas as pd
 import numpy as np
 
-def calcular_rotacion_inventario(df):
+def calcular_rotacion_inventario(df=None, input=None):
+    if input is not None:
+        df = input.get("df", df)
     df = df.copy()
     df['final_stock'] = df['initial_stock'] - df['units_sold'] + df['restock_units']
     avg_stock = (df['initial_stock'] + df['final_stock']) / 2
