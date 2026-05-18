@@ -2,14 +2,16 @@ import pandas as pd
 import numpy as np
 
 def calcular_rotacion_inventario(*args, **kwargs):
-    # Acepta cualquier forma de llamado
+    # Extrae df de donde sea que venga
     if args:
         arg = args[0]
-        df = arg["df"] if isinstance(arg, dict) else arg
-    elif "input" in kwargs:
-        df = kwargs["input"]["df"]
-    elif "df" in kwargs:
-        df = kwargs["df"]
+        if isinstance(arg, dict):
+            df = arg.get("df") or arg.get("input", {}).get("df")
+        else:
+            df = arg
+    else:
+        inp = kwargs.get("input") or kwargs.get("df") or kwargs
+        df = inp.get("df") if isinstance(inp, dict) else inp
 
     res = df.copy()
     res['final_stock']   = res['initial_stock'] - res['units_sold'] + res['restock_units']
