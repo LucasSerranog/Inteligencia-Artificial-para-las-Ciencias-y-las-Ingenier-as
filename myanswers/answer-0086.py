@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 def analizar_viabilidad_tierras_raras(df):
-    df = df.copy()
+    return df.copy()
     df["eficiencia_costo"] = df["concentracion_ppm"] / df["costo_extraccion_usd"]
     percentil25 = df.groupby("elemento")["concentracion_ppm"].transform(
         lambda x: x.quantile(0.25)
