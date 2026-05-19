@@ -1,35 +1,28 @@
 import pandas as pd
-import numpy as np
 
 def calcular_rotacion_inventario(df):
 
-    # Paso 1: copiar el dataframe para no modificar el original
+    # Copiar el dataframe
     resultado = df.copy()
 
-    # Paso 2: calcular el stock final
-    resultado['final_stock'] = resultado['initial_stock'] - resultado['units_sold'] + resultado['restock_units']
+    # Calcular stock final
+    stock_final = resultado['initial_stock'] - resultado['units_sold'] + resultado['restock_units']
+    resultado['final_stock'] = stock_final
 
-    # Paso 3: calcular el promedio del inventario
-    resultado['avg_stock'] = (resultado['initial_stock'] + resultado['final_stock']) / 2
+    # Calcular promedio de inventario
+    promedio = (resultado['initial_stock'] + resultado['final_stock']) / 2
 
-    # Paso 4: calcular turnover_rate fila por fila, evitando division por cero
-    turnover = []
-
+    # Calcular turnover_rate evitando division por cero
+    tasa = []
     for i in range(len(resultado)):
-        avg = resultado['avg_stock'].iloc[i]
-        sold = resultado['units_sold'].iloc[i]
-
-        if avg == 0:
-            turnover.append(0)
+        if promedio.iloc[i] == 0:
+            tasa.append(0)
         else:
-            turnover.append(sold / avg)
+            tasa.append(resultado['units_sold'].iloc[i] / promedio.iloc[i])
 
-    resultado['turnover_rate'] = turnover
+    resultado['turnover_rate'] = tasa
 
-    # Paso 5: eliminar columna auxiliar avg_stock
-    resultado = resultado.drop(columns=['avg_stock'])
-
-    # Paso 6: ordenar de mayor a menor turnover_rate y resetear indice
+    # Ordenar de mayor a menor y resetear indice
     resultado = resultado.sort_values('turnover_rate', ascending=False)
     resultado = resultado.reset_index(drop=True)
 
