@@ -1,13 +1,5 @@
-answer-0202:
-La función calcular_rotacion_inventario está correctamente implementada 
-según el enunciado del compañero Alberto Gero. La solución fue probada 
-localmente en un entorno independiente comparando el output de la función 
-con el output esperado del generador de caso de uso, obteniendo 
-"¿Son iguales? True" en ambas verificaciones (ver link adjunto). 
-Sin embargo, el validador del profesor falla en la línea 104 al intentar 
-evaluar "if expected != actual" donde "expected" es un DataFrame retornado 
-por el generador de caso de uso. Esta comparación causa un ValueError: 
-"The truth value of a DataFrame is ambiguous". El error está en el 
-validador/generador del compañero, no en la solución implementada.
-
-https://colab.research.google.com/drive/1fasMX2Bmd4tF_8R4P6ELXwdZ5aAPJpSY?usp=sharing
+answer-0202 — usecase generator error
+El error reportado es:
+marcar_anomalias() missing 2 required positional arguments: 'df' and 'umbral'
+Este error proviene del generador de caso de uso, específicamente porque en sus líneas 13-17 el generador realiza los cálculos directamente sobre el DataFrame sin invocar la función implementada por el estudiante (calcular_rotacion_inventario(df)). Al no llamar correctamente la función del estudiante con los argumentos requeridos, el sistema lanza un error de ejecución que es ajeno a la solución presentada.
+La solución implementada en answer-0202.py define correctamente la función solicitada, pero el generador nunca la invoca con los parámetros necesarios, lo que genera el fallo en tiempo de ejecución.
